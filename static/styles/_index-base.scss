@@ -1,0 +1,39 @@
+// Css reset
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// Variables
+:root{
+    scroll-behavior: smooth;
+    // primary
+    --base-color:rgb(218, 196, 167);
+    --footer-accent: rgba(192, 231, 231, 0.753);
+    // neautral
+    --white: hsl(0, 0%, 100%);
+    --black:#333;
+    --pure-black:#000;
+    // typography
+    --font-size: 1.2rem;
+    --font-body: 'Barlow', sans-serif;
+    --font-header: 'Fraunces', serif;
+    --font-title:'Courier New', Courier, monospace;;
+}
+// 
+
+// 
+button{cursor: pointer;}
+img{display: block;}
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+/////////////////////////////////
+$mobile:576px;
+@mixin responsive($size){
+	@media (max-width:$size) {
+		@content
+	}
+}

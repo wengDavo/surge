@@ -1,0 +1,29 @@
+{% extends 'cryptos/base.html' %}
+
+{% block title %}
+<section class="cryptotrending-header">
+    <section class="crypto-title">
+        <p><span>BOOKMARKS</span></p>
+        <p><span>Total Bookmarked<span class="green-accent">&#8608;</span>{{ info.total_count }}</span></p>
+    </section>
+</section>
+{% endblock title %}
+
+{% block content %}
+<section class="bookmark-container">
+    {% if bookmarks %}
+        {% for bookmark in bookmarks %}
+            <div class="bookmark-item">
+                <p>Name<span class="green-accent">&#8608;</span>{{ bookmark.crypto.name }}</p>
+                <p>Symbol<span class="green-accent">&#8608;</span>{{ bookmark.crypto.symbol }}</p>
+                <a href="{% url 'crypto:cryptodetail' bookmark.crypto.slug %}" class="offset-right green-accent">
+                    <span class="material-symbols-outlined">info</span>
+                </a>
+                {% include 'bookmarks/removebookmark.html' %}
+            </div>
+        {% endfor %}
+    {% else %}
+    <p class="center information delete">no bookmarks saved</p>
+{% endif %}
+</section>
+{% endblock content %}

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+	--white: #FFFAFF;
+    --border-color:#a1a1a1;
+	--bookmark:rgb(253, 192, 112);
+	--delete:#ff1c1c;
+
+	--card-color:#333;
+	--card-color-alt:#2b272279;
+	--pure-black:#000;
+
+
+    --primary:#232324;
+	--primary-alt:#4e4e4d;
+	--light:#636060;
+
+	--base-color:rgb(218, 196, 167);
+	--secondary:rgb(253, 192, 112);
+    --tertiary:#EDEDED;
+
+	--font-header: 'Fraunces', serif;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: monospace;
+	font-size: 1rem;
+}
+
+ul {list-style: none;}
+input{
+	border: transparent;
+	outline: transparent;
+	font-family: inherit;
+	font-size: inherit;
+}
+button{
+    cursor: pointer;
+    border: transparent;
+    outline: transparent;
+    background-color: transparent;
+    color: inherit;
+}
+img{
+    display: block;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$mobile:576px;
+@mixin responsive($size){
+	@media (max-width:$size) {
+		@content
+	}
+}

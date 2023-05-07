@@ -1,0 +1,6 @@
+<form action="{% url 'bookmarks:addbookmark' crypto.slug %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="bookmark">
+        <span class="material-symbols-outlined">bookmark</span>
+    </button>
+</form>

@@ -1,0 +1,59 @@
+///////////////////////////////////////////////////////////
+.main__image{
+    height: 100%;
+    width: 100%;
+    img{
+        width: inherit;
+        height: inherit;
+    }
+}
+.main__form{
+    background-color: var(--white);
+    display: grid;
+    place-content: center;
+
+    & input{
+        outline: transparent;
+        border-left: transparent;
+        border-right: transparent;
+        border-top: transparent;
+        padding: 0.8rem;
+        margin-bottom: 0.2rem;
+    }
+
+    & button{
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        border: transparent;
+        background-color: var(--black);
+        color: var(--white);
+        margin: 1rem 0;
+    }
+    & div{
+        display: grid;
+    }
+}
+////////////////////////////////////////////////////////////////
+.dash{
+    text-decoration: dashed;
+    display: inline-block;
+    width: 100px;
+    height: 2.3px;
+    background-color:var(--light-black);
+}
+.cursive{
+    font-family: cursive;
+}
+.pad-top-bottom{
+    margin: 1rem 0;
+}
+.pad-bottom{
+    margin-bottom: 1rem;
+}
+.pad-inline{
+    padding-inline: 1.5rem;
+}
+.message{
+    color: rgb(219, 61, 61);
+}

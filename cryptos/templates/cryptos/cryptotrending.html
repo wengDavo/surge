@@ -1,0 +1,33 @@
+{% extends 'cryptos/base.html' %}
+
+{% block title %}
+<section class="cryptotrending-header">
+    <section class="crypto-title">
+        <p>The Top<span class="bookmark"> 8 </span>Trending Crypto</p>
+    </section>
+</section>
+{% endblock title %}
+
+
+{% block content %}
+<section class="cryptotrending-card-container">
+{% for trending in trending_crypto %}
+    <div class="cryptotrending-card">
+        <div class="cryptotrending-card__title">
+            <img src="{{ trending.item.small }}" alt="crypto img">
+            <h1>{{ trending.item.name }}</h1>
+        </div>
+        <div class="cryptotrending-card__body">
+            <p>Score<span class="green-accent">&#8608;</span>{{ trending.item.score }}</p>
+            <p>Price Btc<span class="green-accent">&#8608;</span>{{ trending.item.price_btc }}</p>
+        </div>
+        <div>
+            <p>
+                <a href="{% url 'crypto:cryptodetail' trending.item.slug %}">
+                    <span class="material-symbols-outlined green-accent offset-right">chevron_right</span></a>
+            </p>
+        </div>
+    </div>
+{% endfor %}
+</section>
+{% endblock content %}

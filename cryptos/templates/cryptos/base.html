@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="{% static 'styles/crypto.css' %}">
+    <link rel="icon" href="/static/pictures/favicon.png">
+    <title>SURGE</title>
+</head>
+<body class="body">
+    <header class="header">
+        <section class="header__top">
+            <section class="header__logo">
+                <h3 class="logo-title">Surge</h3>
+            </section>
+            <section class="header__search">
+                <form action="{% url 'crypto:cryptosearch' %}" method="GET">
+                    {% csrf_token %}
+                    <button type="submit">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                    <input type="text" name="search" id="search" placeholder="search for your favorite cryptocurrencies">
+                 </form>
+            </section>
+        </section>
+        <section class="header__info">
+            {% block title %}
+            {% endblock title %}
+        </section>
+        <nav class="header__nav">
+                <ul>
+                    <li><a href="{% url 'crypto:cryptolist' %}">All</a></li>
+                    <li><a href="{% url 'bookmarks:bookmarklist' %}">Bookmarks</a></li>
+                    <li><a href="{% url 'crypto:cryptotrending' %}">Trending</a></li>
+                </ul>
+        </nav>
+    </header>
+    <main class="main">
+        {% include 'cryptos/messages.html' %}
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer class="footer"></footer>
+</body>
+<script>
+    message = document.querySelector("#message");
+    setTimeout(()=>{message.remove()},2000);
+</script>
+</html>

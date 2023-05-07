@@ -1,0 +1,6 @@
+<form action="{% url 'bookmarks:deletebookmark' bookmark.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" value="delete" class="offset-left bookmark">
+        <span class="material-symbols-outlined delete">delete</span>
+    </button>
+</form>

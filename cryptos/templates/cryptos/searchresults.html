@@ -1,0 +1,26 @@
+{% extends 'cryptos/base.html' %}
+
+{% block title %}
+<section class="cryptotrending-header">
+  <section class="crypto-title">
+      <p><span>SEARCH</span></p>
+      <p><span>Search Results<span class="green-accent">&#8608;</span>{{ count }}</span></p>
+  </section>
+</section>
+{% endblock title %}
+
+{% block content %}
+     <section class="search-body">
+       {% if search_results %}
+            {% for crypto in search_results %}
+                <div class="searchresult-card">
+                  <p><a href="{% url 'crypto:cryptodetail' crypto.slug %}">
+                      <p>{{ crypto.name }}</p>                    
+                  </a></p>
+                </div>
+            {% endfor %}
+        {% else %}
+                <p class="center information delete">crypto not found </p>
+       {% endif %}
+     </section>
+{% endblock content %}

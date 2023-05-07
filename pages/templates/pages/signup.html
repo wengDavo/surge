@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static 'styles/sign.css' %}">
+    <link rel="icon" href="/static/pictures/favicon.png">
+    <title>Signup</title>
+</head>
+<body class="body">
+    <header>
+        {% include 'pages/messages.html' %}
+    </header>
+   <main class="main">
+        <section >
+            <figure class="main__image">
+                <img src="{% static 'pictures/signup.jpg' %}" alt="" width="100px" height="100px">
+            </figure>
+        </section>
+        <section class="main__form">
+            <legend class="cursive pad-bottom">WELCOME TO SURGE</legend>
+            <form action="{% url 'accounts:signup' %}" method="POST" name="signupForm">
+                {% csrf_token %}
+                <div>
+                    <label for="id_username">Username</label>
+                    <input type="text" name="username" placeholder="username" maxlength="100" autofocus required id="id_username">
+                </div>
+                <div>
+                    <label for="id_email">Email address</label></th>
+                    <input type="email" name="email" placeholder="name@email.com" maxlength="254" id="id_email">
+                </div>
+                <div>
+                    <label for="id_password1">Password</label>
+                    <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
+                </div>
+                <div>
+                    <label for="id_password2">Password confirmation</label>
+                    <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+                </div>
+                <button type="submit" class="btn" id="submitBtn" value='signup'>SIGN UP</button>
+            </form>
+            <div class="message"></div>
+            <p class="pad-top-bottom pad-inline"><span class="dash"></span> or <span class="dash"></span></p> 
+            <p class="pad-top-bottom">Already A User? <a href="{% url 'pages:loginpage' %}">LOGIN</a></p>
+            <p><a href="{% url 'pages:landingpage' %}">Back</a></p>
+        </section>
+   </main>
+</body>
+<script>
+    message = document.querySelector("#message");
+    setTimeout(()=>{message.remove()},2000);
+</script>
+</html>

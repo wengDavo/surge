@@ -1,0 +1,18 @@
+.header{
+    padding: 1rem;
+    color: var(--base-color);
+    font-family: var(--font-header);
+    height: 80vh;
+    position: relative;
+}
+.main{
+    font-family: var(--font-body);
+}
+.footer{
+    height: 100px;
+    font-family: var(--font-body);
+    background-color: var(--black);
+    color: (--pure-black);
+    display: grid;
+    place-content: center;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,200" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+    <link rel="icon" href="/static/pictures/favicon.png">
+    <title>SURGE</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="scrollTopLink">
+            <span class="material-symbols-outlined">
+                north
+            </span>
+        </a>
+        <section>
+            <figure class="img-container">
+                <img src="{% static 'pictures/favicon.png' %}" alt="background image" class="img img-bg" width="250" height="250px">
+            </figure>
+        </section>
+        <section class="header__menu">
+            <h2>Surge</h2>
+
+            <article class="header__buttons-container">
+                <button class="header__btn">
+                    <a href="{% url 'pages:loginpage' %}">Login</a>
+                </button>
+                <button class="header__btn">
+                    <a href="{% url 'pages:signuppage' %}">Signup</a>
+                </button>
+            </article>
+        </section>
+        <section>
+            <h1 class="header__title">
+                WE ARE <span class="underline">SURGE</span>
+                AND WE KEEP YOU
+                <span class="underline">INFRORMED</span>
+            </h1>
+            <span class="material-symbols-outlined arrow-centre">
+                south
+            </span>
+        </section>
+    </header>
+    <main class="main">
+        <section class="card">
+            <article class="card__body">
+                <h2 class="card__title">Are you a Crypto Enthusiast ?</h2>
+                <p class="card__text">So are we, and you've come to the right place, we made this for enthusiasts like us, We are a full-service agency, specializing in cryptocurrencies, boasting of a library with of over <span class="underline">10,000</span> different types of cryptocurrencies, we simplify the process of keeping track of your<span class="wigly"> Cryptocurrencies</span></p>
+            </article>
+            <figure>
+                <img src="{% static 'pictures/bitcoin.jpg' %}" alt="bitcoin" height="100px" width="100px" class="card__image">
+            </figure>
+        </section>
+        <section class="card card-reversed">
+            <figure>
+                <img src="{% static 'pictures/dark-bitcoin.jpg' %}" alt="leaves" height="100px" width="100px" class="card__image">
+            </figure>
+            <article class="card__body">
+                <h2 class="card__title">Detailed Information</h2>
+                <p class="card__text">Using a collaborative formula of designers, reserachers, and programmers, we will built a detailed, and accurate view of each currency all you need to do is <span class="underline">SEARCH </span></p>
+            </article>
+        </section>
+        <section class="card">
+            <article class="card__body">
+                <h2 class="card__title">What are you waiting for ?</h2>
+                <p class="card__text">Surge Up, register, and explore our vast library of <span class="wigly">Cryptocurrency</span> for <span class="underline">FREE</span></p>
+            </article>
+            <figure>
+                <img src="{% static 'pictures/favicon.png' %}" alt="leaves" height="100px" width="100px" class="card__image">
+            </figure>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__text">SURGE&#174;</p>
+    </footer>
+</body>
+<script src="{% static 'scripts/index.js' %}"></script>
+</html>

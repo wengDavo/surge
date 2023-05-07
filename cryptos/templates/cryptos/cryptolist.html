@@ -1,0 +1,43 @@
+{% extends 'cryptos/base.html' %}
+
+{% block title %}
+<section class="cryptolist-header">
+    <section class="crypto-title">
+        <p><span>Cryptocurrencies</span></p>
+        <p><span>Total Cryptocurrencies<span class="green-accent">&#8608;</span>{{ total_number_crypto }}</span></p>
+        <section class="cryptolist-navigation">
+            {% block pagination %}
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'crypto:cryptolist' %}?page={{ page_obj.previous_page_number }}">
+                        <span class="material-symbols-outlined">skip_previous</span>
+                    </a>
+                {% endif %}
+                    <p>Page: {{page_obj.number}} of {{ page_obj.paginator.num_pages }}</p>
+                {% if page_obj.has_next %}
+                    <a href="{% url 'crypto:cryptolist' %}?page={{ page_obj.next_page_number}}">
+                        <span class="material-symbols-outlined">skip_next</span>
+                    </a>
+                {% endif %}
+            {% endblock pagination %}
+        </section>
+    </section>
+</section>
+{% endblock title %}
+
+{% block content %}
+<section class="cryptolist-body">
+    {% for crypto in cryptos %}
+        <article class="cryptolist-card">
+            <p>{{ crypto.name }}</p>
+            <p>{{ crypto.symbol }}</p>
+            <p>
+                <a href="{% url 'crypto:cryptodetail' crypto.slug %}">
+                    <span class="material-symbols-outlined">info</span>
+                </a>
+            </p>
+            {% include 'bookmarks/addbookmark.html' %}
+        </article>
+
+    {% endfor %}
+</section>
+{% endblock content %}

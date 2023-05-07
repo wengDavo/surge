@@ -1,0 +1,7 @@
+<section>
+    <form action="{% url 'crypto:cryptosearch' %}" method="GET">
+        {% csrf_token %}
+        <input type="text" name="search" id="search">
+        <button type="submit">Search</button>
+     </form>
+</section>

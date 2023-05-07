@@ -1,0 +1,106 @@
+{% extends 'cryptos/base.html' %}
+
+{% block title %}
+<section class="cryptodetail-header">
+    <div class="cryptodetail-info">
+        <p>Name <span class="green-accent">&#8608;</span> {{ crypto.name }}</p>
+        <p>Symbol <span class="green-accent">&#8608;</span> {{ crypto.symbol|upper }}</p>
+        {% include 'bookmarks/addbookmark.html' %}
+    </div>
+    <div >
+        <figure class="cryptodetail-image">
+            <img src="{{ detail.image }}" alt="" width="100px" height="100px">
+        </figure>
+    </div>
+</section>
+{% endblock title %}
+
+{% block content %}
+    <section class="cryptodetail-body">
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">money </span>
+            <span>Current Price<span class="green-accent">&#8608;</span>{{ detail.current_price }}$</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">stars </span>
+            <span>Cap Rank<span class="green-accent">&#8608;</span>{{ detail.market_cap_rank }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">north</span>
+            <span>High 24h<span class="green-accent">&#8608;</span>{{ detail.high_24h }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">south</span>
+            <span>Low 24h<span class="green-accent">&#8608;</span>{{ detail.low_24h }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">store </span>
+            <span>Market Cap<span class="green-accent">&#8608;</span>{{ detail.market_cap }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">note</span>
+            <span>Fully Diluted Valuation<span class="green-accent">&#8608;</span>{{ detail.fully_diluted_valuation }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">magic_exchange</span>
+            <span>Total Volume<span class="green-accent">&#8608;</span>{{ detail.total_volume }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">price_change</span>
+            <span>Price Change 24h<span class="green-accent">&#8608;</span>{{ detail.price_change_24h }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">percent</span>
+            <span>Price Change Percentage<span class="green-accent">&#8608;</span>{{ detail.price_change_percentage_24h }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">magic_exchange</span>
+            <span>Market Cap Change 24h<span class="green-accent">&#8608;</span>{{ detail.market_cap_change_24h }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">percent</span>
+            <span>Market Cap Change Percentage<span class="green-accent">&#8608;</span>{{ detail.market_cap_change_percentage_24h }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">swap_vertical_circle </span>
+            <span>Circulating Supply<span class="green-accent">&#8608;</span>{{ detail.circulating_supply }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">swap_horizontal_circle </span>
+            <span>Total Supply<span class="green-accent">&#8608;</span>{{ detail.total_supply }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">inventory_2</span>
+            <span>Max Supply<span class="green-accent">&#8608;</span>{{ detail.max_supply }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">note</span>
+            <span>Ath<span class="green-accent">&#8608;</span>{{ detail.ath }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">percent </span>
+            <span>Ath Chaage Percentage<span class="green-accent">&#8608;</span>{{ detail.ath_change_percentage }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">note</span>
+            <span>At1<span class="green-accent">&#8608;</span>{{ detail.atl }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">percent</span>
+            <span>At1 Chnage Percentage<span class="green-accent">&#8608;</span>{{ detail.atl_change_percentage }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">calendar_month</span>
+            <span>Ath date<span class="green-accent">&#8608;</span>{{ detail.ath_date }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">keyboard_return</span>
+            <span>Roi<span class="green-accent">&#8608;</span>{{ detail.roi }}</span>
+        </p>
+        <p class="cryptodetail-card">
+            <span class="material-symbols-outlined green-accent">calendar_month</span>
+            <span>Last Updated<span class="green-accent">&#8608;</span>{{ detail.last_updated }}</span>
+        </p>
+    </section>
+    
+{% endblock content %}

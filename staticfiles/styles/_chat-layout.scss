@@ -1,0 +1,24 @@
+.body{
+    display:grid;
+    grid-template-rows: 15vh 80vh;
+    background-image: linear-gradient( #2c3a34, #7c9672, #434642f3);
+    max-height: 100vh;
+}
+
+.header{
+    background-color: var(--black);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main{
+    background-color: var(--black);
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 85vh;
+    padding: 1rem;
+    gap: 1rem;
+
+}
