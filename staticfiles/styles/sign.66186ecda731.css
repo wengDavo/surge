@@ -111,11 +111,5 @@ img {
 }
 
 .message {
-  color: #da1414;
-  position: fixed;
-  top: 7%;
-  left: 10%;
-  background-color: var(--light-black);
-  border-radius: 10px;
-  font-size: cl;
-}/*# sourceMappingURL=sign.css.map */
+  color: rgb(219, 61, 61);
+}/*# sourceMappingURL=sign.66186ecda731.css.map */

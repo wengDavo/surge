@@ -55,5 +55,11 @@
     padding-inline: 1.5rem;
 }
 .message{
-    color: rgb(219, 61, 61);
+    color: #da1414;
+    position: fixed;
+    top: 7%;
+    left: 10%;
+    background-color: var(--light-black);
+    border-radius: 10px;
+    font-size: clamp(1rem, 0.rem +1.6vw, 1.5rem);
 }

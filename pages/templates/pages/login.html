@@ -1,48 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%  static 'styles/sign.css' %}">
-    <link rel="icon" href="/static/pictures/favicon.png">
+{% extends 'pages/base.html' %}
+{% load static %}
 
-    <title>Login</title>
-</head>
-<body class="body">
-    <header>
-        {% include 'pages/messages.html' %}
-    </header>
-   <main class="main">
-        <section >
-            <figure class="main__image">
-                <img src="{% static 'pictures/login.jpg' %}" alt="" width="100px" height="100px">
-            </figure>
-        </section>
-        <section class="main__form">
-            <legend class="cursive">WELCOME BACK TO SURGE</legend>
-            <form action="{% url 'accounts:login' %}" method="POST" name="loginForm">
-                {% csrf_token %}
-                <div class="pad-top-bottom">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" required>
-                </div>
-                <div class="pad-top-bottom">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
-                </div>
-                <button type="submit" name="submitBtn" value="log in">Log In</button>
-            </form>
-            <div class="message"></div>
-            <p class="pad-top-bottom pad-inline"><span class="dash"></span> or <span class="dash"></span></p> 
-            <p class="pad-top-bottom">New to Surge? <a href="{% url 'pages:signuppage' %}">Create an Account</a></p>
-            <p><a href="{% url 'pages:landingpage' %}">Back</a></p>
-        </section>
-   </main>
-<script>
-message = document.querySelector("#message");
-setTimeout(()=>{message.remove()},2000);
-</script>
-</body>
-</html>
+{% block title %}
+LOGIN
+{% endblock title %}
+
+{% block content %}
+<section >
+    <figure class="main__image">
+        <img src="{% static 'pictures/login.jpg' %}" alt="" width="100px" height="100px">
+    </figure>
+</section>
+<section class="main__form">
+    <legend class="cursive">WELCOME BACK TO SURGE</legend>
+    <form action="{% url 'accounts:login' %}" method="POST" name="loginForm">
+        {% csrf_token %}
+        <div class="pad-top-bottom">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required>
+        </div>
+        <div class="pad-top-bottom">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <button type="submit" name="submitBtn" value="log in">Log In</button>
+    </form>
+    <div class="message"></div>
+    <p class="pad-top-bottom pad-inline"><span class="dash"></span> or <span class="dash"></span></p> 
+    <p class="pad-top-bottom">New to Surge? <a href="{% url 'pages:signuppage' %}">Create an Account</a></p>
+    <p><a href="{% url 'pages:landingpage' %}">Back</a></p>
+</section>
+{% endblock content %}

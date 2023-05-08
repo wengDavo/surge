@@ -9,14 +9,15 @@ from django.contrib.auth import authenticate, login
 class SignupView(View):
     def post(self, request):
         form = CustomUserCreationForm(self.request.POST)
+        print(form,"-------------form")
+        print(self.request.POST,"-----------------POST")
 
         if form.is_valid():
             form.save()
             return redirect('pages:loginpage')
-        else:
-            for key, value in form.error_messages.items():
-                 messages.warning(self.request,f"{value}")
-            return redirect('pages:signuppage')
+        
+        messages.warning(self.request,form.errors)
+        return redirect('pages:signuppage')
 
 class LoginView(View):
     def post(self, request):

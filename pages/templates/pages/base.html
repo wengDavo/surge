@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static 'styles/sign.css' %}">
+    <link rel="icon" href="/static/pictures/favicon.png">
+    <title>{% block title %}LOGIN{% endblock title%}</title>
+</head>
+<body class="body">
+    <header>
+        {% include 'pages/messages.html' %}
+    </header>
+   <main class="main">
+        {% block content %}
+        {% endblock content %}
+   </main>
+<script>
+message = document.querySelector("#message");
+setTimeout(()=>{message.remove()},3500);
+</script>
+</body>
+</html>
