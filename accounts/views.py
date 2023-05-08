@@ -10,9 +10,6 @@ class SignupView(View):
     def post(self, request):
         form = CustomUserCreationForm(self.request.POST)
 
-        # if self.request.user.is_authenticated:
-        #     return redirect('/')
-        
         if form.is_valid():
             form.save()
             return redirect('pages:loginpage')
@@ -26,10 +23,7 @@ class LoginView(View):
         username = self.request.POST.get('username')
         password = self.request.POST.get('password')
         user = authenticate(self.request, username=username, password=password)
-        print(user,"---------------user------------------")
-        print(password,"---------------password------------------")
     
-
         if user is not None:
             login(self.request, user)
             return redirect('crypto:cryptolist')
