@@ -1,6 +1,7 @@
 from typing import Any, Dict
 from django.db.models.query import QuerySet
 from .models import Crypto
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator, EmptyPage
 from pycoingecko import CoinGeckoAPI
@@ -19,7 +20,7 @@ class MyPaginator(Paginator):
             else:
                 raise
     
-class CryptoListView(ListView):
+class CryptoListView(LoginRequiredMixin,   ListView):
     template_name = 'cryptos/cryptolist.html'
     context_object_name = 'cryptos'
     model = Crypto
@@ -31,7 +32,7 @@ class CryptoListView(ListView):
         context['total_number_crypto'] = Crypto.objects.count()
         return context
 
-class CryptoDetailView(DetailView):
+class CryptoDetailView(LoginRequiredMixin, DetailView):
     template_name = 'cryptos/cryptodetail.html'
     context_object_name = 'crypto'
     
@@ -45,7 +46,7 @@ class CryptoDetailView(DetailView):
         context['detail'] = detail
         return context
 
-class CryptoTrendingView(ListView):
+class CryptoTrendingView(LoginRequiredMixin, ListView):
     template_name = 'cryptos/cryptotrending.html'
     context_object_name = 'trending_crypto'
 
@@ -54,7 +55,7 @@ class CryptoTrendingView(ListView):
         trending = search['coins']
         return trending
 
-class CryptoSearchView(ListView):
+class CryptoSearchView(LoginRequiredMixin, ListView):
     template_name = 'cryptos/searchresults.html'
     context_object_name = 'search_results'
     model = Crypto

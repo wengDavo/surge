@@ -5,9 +5,10 @@ from cryptos.models import Crypto
 from .models import Bookmark
 from django.shortcuts import redirect
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
-class BookmarkListView(ListView):
+class BookmarkListView(LoginRequiredMixin, ListView):
     template_name = 'bookmarks/bookmarklist.html'
     context_object_name = 'bookmarks'
     
