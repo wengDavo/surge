@@ -92,13 +92,13 @@ From the landing page users can Signup or Login, this is required to get acces t
 
 <br>
 ### The signup Page
-![screenshot signup page](static\pictures\screenshot-signup.png) 
+![screenshot signup page](static\pictures\screenshot-signup.png)   
 ![screenshot-signup](https://user-images.githubusercontent.com/107735530/237018575-2d251d1b-86ba-4a79-a2e5-00ac6765ecb9.png)
 
 
 <br>
 ### The Crypto Page  
-![screenshot signup page](static\pictures\screenshot-all.png)
+![screenshot signup page](static\pictures\screenshot-all.png)  
 ![screenshot-all](https://user-images.githubusercontent.com/107735530/237018805-fc73c057-ad9b-4316-b783-8199330c5cde.png)
 
 
