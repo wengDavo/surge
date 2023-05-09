@@ -95,7 +95,7 @@ img {
 }
 
 .cursive {
-  font-family: cursive;
+  font-family: "Barlow", sans-serif;
 }
 
 .pad-top-bottom {
@@ -117,5 +117,5 @@ img {
   left: 10%;
   background-color: var(--light-black);
   border-radius: 10px;
-  font-size: cl;
+  font-size: clamp(1rem, 0.5rem + 1.6vw, 1.5rem);
 }/*# sourceMappingURL=sign.css.map */

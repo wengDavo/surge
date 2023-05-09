@@ -1,0 +1,41 @@
+.body{
+    display: grid;
+    grid-template-rows: 30vh 70vh;
+    height: 100svh;
+}
+
+.header{
+    background-color: var(--primary);
+
+    display: grid;
+    grid-template-rows: 25% 60% auto;
+
+    &__top{
+        display: grid;
+        grid-template-columns: 15% 80%;
+
+        place-content: center;
+        border-bottom: 0.1rem solid var(--border-color);
+    }
+    &__info{
+        font-size: 1.3em;
+        color: var(--white);
+    }
+    &__nav{
+        border-top: 0.1rem solid var(--border-color);
+        border-bottom: 0.1rem solid var(--border-color);
+        display: grid;
+        align-items: center;
+    }
+
+}
+
+.main{
+    background-color: var(--card-color);
+    color: var(--white);
+    scrollbar-width: none;
+	overflow: auto;
+	&::-webkit-scrollbar{
+		display: none;
+	}
+}

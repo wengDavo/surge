@@ -12,10 +12,6 @@
 .underline{
     text-decoration: underline;
 }
-.wigly{
-    text-decoration-line:underline;
-    text-decoration-style: wavy;
-}
 .nowrap{
     white-space: nowrap;
 }
@@ -69,8 +65,9 @@
     }
     &__title{
         position: absolute;
-        width: 50%;
-        transform: translateY(200%);
+        width: 80%;
+        bottom: 10%;
+        left: 0;
         letter-spacing:7px;
     }
 }

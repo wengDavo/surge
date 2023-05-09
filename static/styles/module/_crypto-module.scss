@@ -111,6 +111,17 @@
 }
 .cryptolist-navigation{
     display: flex; 
+    @include responsive($mobile){
+        position: fixed;
+        bottom: 0;
+        padding-top: 0.5rem;
+        background-color: var(--card-color);
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-inline: auto;
+        border-radius: 10px;
+    }
     a{
         color: var(--primary-alt);
         text-decoration: none;
@@ -132,7 +143,15 @@
     @include responsive($mobile){
         gap: 0rem;
     }
+    &__name{
+        width: 50px;
+        overflow-x: scroll;
+        scrollbar-width: none;
 
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
     padding: 1rem 2rem;
 
     a{

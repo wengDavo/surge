@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+:root {
+  --white: #FFFAFF;
+  --border-color:#a1a1a1;
+  --bookmark:rgb(253, 192, 112);
+  --delete:#ff1c1c;
+  --card-color:#333;
+  --card-color-alt:#2b272279;
+  --pure-black:#000;
+  --primary:#232324;
+  --primary-alt:#4e4e4d;
+  --light:#636060;
+  --base-color:rgb(218, 196, 167);
+  --secondary:rgb(253, 192, 112);
+  --tertiary:#EDEDED;
+  --font-header: "Fraunces", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  border: transparent;
+  outline: transparent;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: transparent;
+  outline: transparent;
+  background-color: transparent;
+  color: inherit;
+}
+
+img {
+  display: block;
+}
+
+.body {
+  display: grid;
+  grid-template-rows: 30vh 70vh;
+  height: 100svh;
+}
+
+.header {
+  background-color: var(--primary);
+  display: grid;
+  grid-template-rows: 25% 60% auto;
+}
+.header__top {
+  display: grid;
+  grid-template-columns: 15% 80%;
+  place-content: center;
+  border-bottom: 0.1rem solid var(--border-color);
+}
+.header__info {
+  font-size: 1.3em;
+  color: var(--white);
+}
+.header__nav {
+  border-top: 0.1rem solid var(--border-color);
+  border-bottom: 0.1rem solid var(--border-color);
+  display: grid;
+  align-items: center;
+}
+
+.main {
+  background-color: var(--card-color);
+  color: var(--white);
+  scrollbar-width: none;
+  overflow: auto;
+}
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+.header__search {
+  background-color: var(--card-color);
+  padding-inline: 1rem;
+  border-radius: 5px;
+}
+.header__search form {
+  display: flex;
+  justify-content: space-around;
+}
+.header__search input {
+  color: var(--white);
+  background-color: inherit;
+  width: 100%;
+  padding: 0.5rem;
+}
+.header__search button {
+  color: var(--white);
+}
+
+.header__nav ul {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+.header__nav a {
+  color: var(--tertiary);
+  text-decoration: none;
+  display: inline-block;
+  height: 100%;
+}
+.header__nav a:hover {
+  color: var(--secondary);
+  border-bottom: 2px solid var(--secondary);
+  border-radius: 2px;
+}
+
+.logo-title {
+  color: var(--base-color);
+  font-family: var(--font-header);
+}
+
+.bookmark {
+  color: var(--bookmark);
+}
+
+.green-accent {
+  color: var(--secondary);
+}
+
+.delete {
+  color: var(--delete);
+}
+
+.message {
+  padding: 1rem;
+  margin: 1rem;
+  color: var(--secondary);
+  background-color: var(--primary);
+  border-radius: 10px;
+  font-style: italic;
+  position: fixed;
+  right: 0;
+  z-index: 100;
+}
+
+.center {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.relative {
+  position: relative;
+}
+
+.information {
+  text-transform: capitalize;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: var(--primary);
+}
+
+.crypto-title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  font-size: 1.7rem;
+  color: var(--primary);
+}
+@media (max-width: 576px) {
+  .crypto-title {
+    font-size: 1.5rem;
+  }
+}
+.crypto-title p {
+  margin-bottom: 0.5rem;
+  background-color: var(--primary-alt);
+  border-radius: 5px;
+  padding-inline: 1rem;
+}
+
+.cryptolist-header {
+  position: relative;
+}
+
+.cryptolist-navigation {
+  display: flex;
+}
+.cryptolist-navigation a {
+  color: var(--primary-alt);
+  text-decoration: none;
+}
+.cryptolist-navigation a:hover {
+  color: var(--secondary);
+}
+
+.cryptolist-body {
+  background-color: var(--primary-alt);
+  margin: 1rem;
+}
+
+.cryptolist-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+  padding: 1rem 2rem;
+}
+@media (max-width: 576px) {
+  .cryptolist-card {
+    gap: 0rem;
+  }
+}
+.cryptolist-card a {
+  color: inherit;
+  text-decoration: none;
+}
+.cryptolist-card a:hover {
+  color: var(--secondary);
+}
+
+.cryptolist-card:nth-child(even) {
+  background-color: var(--card-color);
+}
+
+.cryptolist-card:nth-child(odd) {
+  background-color: var(--card-color-alt);
+}
+
+.cryptodetail-header {
+  display: flex;
+  padding: 1rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cryptodetail-info p {
+  background-color: var(--card-color);
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.cryptodetail-image img {
+  border-radius: 50%;
+}
+
+.cryptodetail-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 576px) {
+  .cryptodetail-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cryptodetail-card {
+  background-color: var(--primary);
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  border-radius: 2px;
+  border-left: 3px solid var(--secondary);
+}
+
+.bookmark-container {
+  height: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  position: relative;
+}
+@media (max-width: 576px) {
+  .bookmark-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bookmark-item {
+  margin: 1rem;
+  background-color: var(--light);
+  color: var(--pure-black);
+  padding: 1rem;
+  font-size: 1.2em;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 250px;
+  height: 150px;
+  border-radius: 10px;
+  position: relative;
+  margin-inline: auto;
+}
+
+.offset-right {
+  background-color: var(--primary-alt);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-10px, -10px);
+  border-radius: 5px;
+  padding: 0.7rem;
+}
+
+.offset-left {
+  background-color: var(--primary-alt);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(10px, -10px);
+  border-radius: 5px;
+  padding: 0.7rem;
+}
+
+.cryptotrending-card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.cryptotrending-card {
+  background-color: var(--light);
+  margin: 1rem;
+  padding: 1rem 5rem;
+  border-radius: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+}
+@media (max-width: 576px) {
+  .cryptotrending-card {
+    padding: 1rem;
+  }
+}
+
+.cryptotrending-card__title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+  padding-bottom: 0.5rem;
+}
+.cryptotrending-card__title img {
+  border-radius: 50%;
+}
+
+.cryptotrending-card__body {
+  font-size: 1.1em;
+}
+.cryptotrending-card__body p {
+  margin: 0.2rem 0;
+}
+
+.search-body {
+  background-color: var(--primary-alt);
+  margin: 1rem;
+}
+
+.searchresult-card {
+  font-size: 1.3em;
+  padding: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+.searchresult-card a {
+  color: inherit;
+  text-decoration: none;
+}
+.searchresult-card a:hover {
+  color: var(--secondary);
+}
+
+.searchresult-card:nth-child(even) {
+  background-color: var(--card-color);
+}
+
+.searchresult-card:nth-child(odd) {
+  background-color: var(--card-color-alt);
+}/*# sourceMappingURL=crypto.f4eaa2b173c8.css.map */

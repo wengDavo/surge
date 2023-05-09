@@ -1,0 +1,115 @@
+/* // Css reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --base-color:rgb(218, 196, 167);
+  --footer-accent: rgba(192, 231, 231, 0.753);
+  --white: hsl(0, 0%, 100%);
+  --black:#333;
+  --light-black:#b9b7b7;
+  --pure-black:#000;
+  --mobile:576px;
+}
+
+/*  */
+a {
+  color: var(--very-dark-desaturated-blue);
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: inline-block;
+}
+
+.body {
+  background-image: linear-gradient(#8a8787, rgb(253, 192, 112));
+  font-size: 1.2rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100%;
+  height: 90%;
+  width: 90%;
+}
+@media (max-width: 576px) {
+  .main {
+    grid-template-columns: 0 1fr;
+  }
+}
+
+.main__image {
+  height: 100%;
+  width: 100%;
+}
+.main__image img {
+  width: inherit;
+  height: inherit;
+}
+
+.main__form {
+  background-color: var(--white);
+  display: grid;
+  place-content: center;
+}
+.main__form input {
+  outline: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-top: transparent;
+  padding: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+.main__form button {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  border: transparent;
+  background-color: var(--black);
+  color: var(--white);
+  margin: 1rem 0;
+}
+.main__form div {
+  display: grid;
+}
+
+.dash {
+  -webkit-text-decoration: dashed;
+          text-decoration: dashed;
+  display: inline-block;
+  width: 100px;
+  height: 2.3px;
+  background-color: var(--light-black);
+}
+
+.cursive {
+  font-family: cursive;
+}
+
+.pad-top-bottom {
+  margin: 1rem 0;
+}
+
+.pad-bottom {
+  margin-bottom: 1rem;
+}
+
+.pad-inline {
+  padding-inline: 1.5rem;
+}
+
+.message {
+  color: rgb(219, 61, 61);
+}/*# sourceMappingURL=sign.66186ecda731.css.map */

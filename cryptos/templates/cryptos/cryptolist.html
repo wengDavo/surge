@@ -28,8 +28,8 @@
 <section class="cryptolist-body">
     {% for crypto in cryptos %}
         <article class="cryptolist-card">
-            <p>{{ crypto.name }}</p>
-            <p>{{ crypto.symbol }}</p>
+            <p class="cryptolist-card__name">{{ crypto.name }}</p>
+            <p class="cryptolist-card__symbol">{{ crypto.symbol }}</p>
             <p>
                 <a href="{% url 'crypto:cryptodetail' crypto.slug %}">
                     <span class="material-symbols-outlined">info</span>
