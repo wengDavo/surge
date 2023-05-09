@@ -11,7 +11,7 @@ This wasn't an easy task, as I had a lot to tackle along the way, there are also
 
 ## Installation and Setup
 ### Requrements
--  *PYTHON* - make sure you have python installed and configured appropriately  
+- *PYTHON* - make sure you have python installed and configured appropriately  
 - *GIT* - make sure you have git installed on your local machine
 - A working knowledge of the Python-Django library 
 - NOTE - `ALL THE COMMANDS HIGHLIGHTED SHOULD BE RUN IN THE ROOT OF THE FOLDER`
@@ -81,26 +81,19 @@ Open http://127.0.0.1:8000 on a web browser and you should the landing page
 ### The Landing Page
 ![screenshot landing page](static\pictures\screenshot-landing.png)
 ![screenshot-landing](https://user-images.githubusercontent.com/107735530/237018445-a94b25ea-8bc8-4711-8895-1205c86b2279.png)
-
-
 From the landing page users can Signup or Login, this is required to get acces to the application
 <br>
 ### The Login Page
 ![screenshot login page](static\pictures\screenshot-login.png) 
-![screenshot-login](https://user-images.githubusercontent.com/107735530/237018731-8e1375e9-a3b4-4345-aa59-66370b7517f4.png)
-
-
+![screenshot-login](https://user-images.githubusercontent.com/107735530/237018731-8e1375e9-a3b4-4345-aa59-66370b7517f4.png)  
 <br>
-### The signup Page
+### The Signup Page
 ![screenshot signup page](static\pictures\screenshot-signup.png)   
-![screenshot-signup](https://user-images.githubusercontent.com/107735530/237018575-2d251d1b-86ba-4a79-a2e5-00ac6765ecb9.png)
-
-
+![screenshot-signup](https://user-images.githubusercontent.com/107735530/237020077-460b8f80-23a4-47c8-809e-c187d746225e.png)  
 <br>
-### The Crypto Page  
+### The Home Page  
 ![screenshot signup page](static\pictures\screenshot-all.png)  
-![screenshot-all](https://user-images.githubusercontent.com/107735530/237018805-fc73c057-ad9b-4316-b783-8199330c5cde.png)
-
+![screenshot-all](https://user-images.githubusercontent.com/107735530/237020149-69e4f6ce-88b7-4704-926a-37817f7b9434.png)  
 
 <br><br>
 As stated this was just a brief overview of the whole application, You could check the live project or clone the project  
